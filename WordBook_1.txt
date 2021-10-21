@@ -469,3 +469,8 @@ trip - поездка
 brush - чистить
 wash - мыть
 face - лицо
+sharp - острый
+knife - нож
+breakfast - завтрак
+dinner - обед
+supper - ужин
