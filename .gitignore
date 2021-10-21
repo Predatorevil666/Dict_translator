@@ -1,7 +1,7 @@
 .idea/
 __pycache__/
 venv/
-Dict_translator.py
+
 Idea of testing.docx
 Option selection function.py
 Random_Key_Dict.py
@@ -10,3 +10,5 @@ Start_func.py
 Start_func_1.py
 Test.py
 WordBook.txt
+dictionary_abc_837.ico
+output/
