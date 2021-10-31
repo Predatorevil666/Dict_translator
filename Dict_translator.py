@@ -4,10 +4,12 @@ from datetime import datetime
 
 start_time = datetime.now()
 
-print('                                         Привет   мой    друг !')
+# print('                                         Привет   мой    друг !')
+print('{:^100}'.format('Привет   мой    друг !'))
 print()
 sleep(2)
-print('                                           Тест начинается !')
+# print('                                           Тест начинается !')
+print('{:^100}'.format('Тест начинается !'))
 sleep(2)
 print()
 
