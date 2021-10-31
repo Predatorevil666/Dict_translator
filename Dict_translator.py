@@ -1,6 +1,7 @@
 import random
 from time import sleep
 from datetime import datetime
+
 start_time = datetime.now()
 
 print('                                         Привет   мой    друг !')
@@ -46,7 +47,7 @@ def guess_answer(dic):
         print(f'Угадай слово --- "{list_guess.upper()}" ')
         user_input = input('Введите ответ : ').lower().strip()
         total_answer += 1
-        if user_input == 'все' or user_input == 'end':
+        if user_input == 'все' or user_input == 'всё' or user_input == 'end':
             sleep(1)
             print()
             print(f'Всего вопросов было : {total_answer}')
@@ -64,7 +65,7 @@ def guess_answer(dic):
             print('"До новых встреч !"')
             break
 
-        elif user_input == dic.get(list_guess):
+        elif user_input.strip() == dic.get(list_guess).strip():
             sleep(1)
             print()
             print('"Правильно"')
@@ -79,59 +80,60 @@ def guess_answer(dic):
             print(f'Твой ответ на слово - "{list_guess.upper()}" - Неправильный !')
             sleep(1)
             wrong_answer += 1
-            corr_answer = (dic.pop(list_guess)).upper()    # - удаление пары (ключ:значение) уже заданного вопроса
+            corr_answer = (dic.pop(list_guess)).upper()  # - удаление пары (ключ:значение) уже заданного вопроса
             print(f'Правильный ответ : "{corr_answer}"')  # - вывод правильного ответа
             print()
-    # sleep(1)
-    # print()
-    # print('"У меня вопросов больше нет !"')
-    # print()
-    # print(f'Всего вопросов было : {total_answer}')
-    # print(f'Правильных ответов : {correct_answer}')
-    # print(f'Неправильных ответов: {wrong_answer}')
-    # print()
-    # print(f'Всего слов в словаре : {len_dic_all}'.upper())
 
 
-# - c русского на английский язык
-def dict_forward():  # - функция для чтения слов из файла и преобразования к единому словарю
+def dict_forward():
+    """
+    С русского на английский язык.
+    Функция для чтения слов из файла и преобразования к единому словарю.
+    """
     with open('WordBook_1.txt') as f:
         content = f.readlines()
         print()
         words_forward = {}
         for line in content:
-            d = line.replace('-', '').strip().split()
-            words_forward.update({d[0]: d[1]})
+            d = line.split('-')
+            words_forward[d[0]] = d[1]
         return words_forward
 
 
- # - c английского на русский язык
-def dict_reverse(words_forward):  # - функция для чтения слов из файла и преобразования к единому словарю(ключ-значения поменялись местами)
+def dict_reverse(words_forward):
+    """
+    С английского на русский язык.
+    Функция для чтения слов из файла и преобразования к единому словарю(ключ-значения поменялись местами).
+    """
     words_reverse = {v: k for k, v in words_forward.items()}
     return words_reverse
 
 
-
 def main():
     dic = start_func()
-    answer = guess_answer(dic)
+    guess_answer(dic)
+
 
 if __name__ == '__main__':
     main()
 
 input()
 
-#                                           Задачи:
-# - реализовать забор например ключей (с удалением из списка), чтобы не повторялся вопрос( наверное использовать функцию pop())  '+'
+"""
+Задачи:
+реализовать забор например ключей (с удалением из списка), 
+чтобы не повторялся вопрос( наверное использовать функцию pop())  '+'
 
-# - реализовать метод забора у ключа с несколькими значениями и если значение состоит из двух слов и более например как быть
+реализовать метод забора у ключа с несколькими значениями и если значение состоит из двух слов и более например как быть
 
-# - реализовать возможность с помощью random() выводить слова для ответа как английском, так и на русском(попеременно)
+реализовать возможность с помощью random() выводить слова для ответа как английском, так и на русском(попеременно)
 
-# - реализовать в конце вывод в каких словах допущена ошибка и правильный ответ на них   '+-'
+реализовать в конце вывод в каких словах допущена ошибка и правильный ответ на них   '+-'
 
-# - сколько времени потрачено на тест(использовать модуль datetime())  '+-'
+сколько времени потрачено на тест(использовать модуль datetime())  '+-'
 
-# - сделать exe (из многих файлов пайтона в один) + добавить .ico файл для exe преобразования
+сделать exe (из многих файлов пайтона в один) + добавить .ico файл для exe преобразования
 
-# - сделать apk для android
+сделать apk для android
+"""
+
