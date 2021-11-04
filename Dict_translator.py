@@ -66,13 +66,13 @@ def guess_answer(dic):
             total_time = end_time - start_time
             print(f'Общее время, потраченное на прохождение теста : {total_time}')
             print()
-            print('"До новых встреч !"')
+            print('До новых встреч !')
             break
 
         elif user_input.strip() == dic.get(list_guess).strip():
             sleep(1)
             print()
-            print('"Правильно"')
+            print('Правильно')
             print()
             correct_answer += 1
             sleep(1)
