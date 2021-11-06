@@ -62,13 +62,13 @@ def guess_answer(dic):
             # corr_answer = dic.pop(list_guess)  # - удаление пары (ключ:значение) уже заданного вопроса
             # print(f'Правильный ответ : {corr_answer}')  # - вывод правильного ответа
             print()
-            print('"До новых встреч !"')
+            print('До новых встреч !')
             break
 
         elif user_input == dic.get(list_guess):
             sleep(1)
             print()
-            print('"Правильно"')
+            print('Правильно')
             print()
             correct_answer += 1
             sleep(1)
@@ -77,7 +77,7 @@ def guess_answer(dic):
         else:
             sleep(1)
             print()
-            print('"Неправильно"')
+            print('Неправильно')
             print()
             sleep(1)
             wrong_answer += 1
@@ -87,7 +87,7 @@ def guess_answer(dic):
             print(f'Правильный ответ : {corr_answer}')  # - вывод правильного ответа
             print()
 
-    print('"У меня вопросов больше нет !"')
+    print('У меня вопросов больше нет !')
     print()
     print(f'Всего вопросов было : {total_answer}')
     print(f'Правильных ответов : {correct_answer}')
